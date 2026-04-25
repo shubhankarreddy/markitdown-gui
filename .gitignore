@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.python-version
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Build output
+build/
+dist/
+installer_output/
+native_publish/
+
+# PyInstaller
+*.spec.bak
+
+# App exports
+MarkItDown Exports/
+
+# Windows / IDE
+.vs/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+Thumbs.db
+Desktop.ini
+
+# Native .NET build output
+**/bin/
+**/obj/
+
+# Logs
+*.log
+
+# Local smoke-test screenshots
+ui_check.png
+markitdown_self_test.log
