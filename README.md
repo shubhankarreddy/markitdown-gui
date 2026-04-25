@@ -64,6 +64,18 @@ The exact savings depend on the document and the AI platform, but the workflow i
 
 ## Quick Start
 
+### Download For Windows
+
+Download the latest portable Windows build from [GitHub Releases](https://github.com/shubhankarreddy/markitdown-gui/releases/latest).
+
+Unzip it, then run:
+
+```text
+MarkItDown.exe
+```
+
+The app is currently unsigned, so Windows SmartScreen may warn on first launch. That is expected for an early open-source build without code signing.
+
 ### Run From Source
 
 Requirements:
