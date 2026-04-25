@@ -37,6 +37,15 @@ MarkItDown GUI gives you a token-aware preparation step:
 - Save the cleaned Markdown and reuse it across prompts, chats, docs, repositories, or RAG pipelines.
 - Send only the specific Markdown section needed for the task instead of the whole raw file every time.
 
+| Workflow | Direct raw upload | MarkItDown GUI first |
+| --- | --- | --- |
+| Input sent to AI | Whole PDF, DOCX, PPTX, spreadsheet, or export | Clean Markdown text you can inspect first |
+| Repeated questions | Often re-upload or re-process the same file | Convert once, reuse the saved `.md` file |
+| Token usage | Can include layout noise, headers, footers, metadata, duplicate text, and irrelevant pages | Can be reduced by trimming the Markdown to only the useful sections |
+| Human control | Hard to see exactly what the model received | Preview, edit, copy, or save the exact text before using it |
+| Privacy posture | Raw document may go directly to the AI platform | Local conversion by default; optional AI enrichment stays user-controlled |
+| Best fit | One-off questions where convenience matters most | Research, docs, RAG prep, repeated prompts, and reusable knowledge bases |
+
 The exact savings depend on the document and the AI platform, but the workflow is intentionally designed to reduce repeated file uploads, context-window waste, and token spend by turning messy source material into inspectable, reusable text.
 
 ## Features
