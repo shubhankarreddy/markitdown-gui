@@ -6,6 +6,8 @@
 
 A practical Windows desktop workflow for [Microsoft MarkItDown](https://github.com/microsoft/markitdown). Drop in documents, folders, or URLs, batch-convert them locally, preview the Markdown, and keep every successful conversion in one predictable output folder.
 
+Built for people preparing documents for AI: convert once, clean once, and reuse compact Markdown instead of repeatedly uploading raw PDFs, Office files, or exported reports.
+
 ![MarkItDown GUI empty queue](docs/screenshots/app-empty-dark.png)
 
 ![MarkItDown GUI converted preview](docs/screenshots/app-converted-dark.png)
@@ -23,11 +25,26 @@ A practical Windows desktop workflow for [Microsoft MarkItDown](https://github.c
 
 The goal is simple: make document-to-Markdown conversion usable for research, docs, notes, GitHub wikis, knowledge bases, and AI/RAG preparation.
 
+## Save Tokens Before AI Uploads
+
+Uploading a raw PDF, DOCX, PPTX, spreadsheet, or exported report directly into an AI tool is convenient, but it can be wasteful when you need to ask multiple questions about the same material. Each upload may force the model or platform to re-process layout, repeated headers, footers, page numbers, tables, metadata, and irrelevant sections before it reaches the actual content you care about.
+
+MarkItDown GUI gives you a token-aware preparation step:
+
+- Convert source files into plain Markdown once.
+- Preview what was extracted before sending anything to an AI tool.
+- Remove irrelevant pages, boilerplate, duplicate sections, or noisy extraction artifacts.
+- Save the cleaned Markdown and reuse it across prompts, chats, docs, repositories, or RAG pipelines.
+- Send only the specific Markdown section needed for the task instead of the whole raw file every time.
+
+The exact savings depend on the document and the AI platform, but the workflow is intentionally designed to reduce repeated file uploads, context-window waste, and token spend by turning messy source material into inspectable, reusable text.
+
 ## Features
 
 - Drag and drop files or folders.
 - Add URLs to the same batch queue.
 - Background folder scanning for supported files.
+- Token-aware Markdown prep for AI prompts, chat workflows, and RAG ingestion.
 - Compact queue with status badges for ready, converting, saved, and failed items.
 - Markdown raw view, rendered preview, and conversion details.
 - Automatic save to a chosen output folder.
