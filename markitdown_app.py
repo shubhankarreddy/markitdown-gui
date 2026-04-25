@@ -55,22 +55,24 @@ sys.excepthook = exception_hook
 
 
 DARK = {
-    "bg": "#0a1118",
-    "surface": "#0f1821",
-    "surface2": "#14202b",
-    "card": "#101b25",
-    "card2": "#162634",
-    "border": "#223445",
-    "border2": "#365066",
-    "accent": "#44cdee",
-    "accent2": "#16aeca",
-    "accent_soft": "#123544",
-    "text": "#eff7ff",
-    "muted": "#98aec2",
-    "success": "#4fd79a",
-    "warning": "#f3c56f",
-    "error": "#ff817d",
-    "btn_text": "#041016",
+    "bg": "#0d1117",
+    "surface": "#0d1117",
+    "surface2": "#161b22",
+    "card": "#161b22",
+    "card2": "#21262d",
+    "border": "#30363d",
+    "border2": "#3d444d",
+    "accent": "#2f81f7",
+    "accent2": "#58a6ff",
+    "accent_soft": "#0d2d56",
+    "primary": "#238636",
+    "primary2": "#2ea043",
+    "text": "#f0f6fc",
+    "muted": "#8b949e",
+    "success": "#3fb950",
+    "warning": "#d29922",
+    "error": "#f85149",
+    "btn_text": "#ffffff",
 }
 LIGHT = {
     "bg": "#eef4f8",
@@ -83,6 +85,8 @@ LIGHT = {
     "accent": "#0ea6bf",
     "accent2": "#0a8ca3",
     "accent_soft": "#d9f2f7",
+    "primary": "#1a7f37",
+    "primary2": "#2da44e",
     "text": "#10202d",
     "muted": "#64798b",
     "success": "#119b6c",
@@ -1138,19 +1142,20 @@ class MainWindow(QMainWindow):
             border-color: %(border)s;
         }
         QPushButton#primaryBtn {
-            background: %(accent)s;
-            border: none;
+            background: %(primary)s;
+            border: 1px solid %(primary)s;
             color: %(btn_text)s;
             font-size: 14px;
-            font-weight: 800;
+            font-weight: 700;
             padding: 12px 16px;
         }
         QPushButton#primaryBtn:hover {
-            background: %(accent2)s;
+            background: %(primary2)s;
+            border-color: %(primary2)s;
         }
         QPushButton#secondaryBtn {
             background: %(card2)s;
-            border-color: %(accent2)s;
+            border-color: %(border2)s;
         }
         QPushButton#ghostBtn {
             background: transparent;
@@ -1963,10 +1968,10 @@ class MainWindow(QMainWindow):
 
     def update_status_chip(self, label, status, text):
         color_map = {
-            "queued": (self.theme["accent_soft"], self.theme["accent"]),
-            "converting": (self.theme["accent_soft"], self.theme["warning"]),
-            "done": ("#14372d" if self._dark else "#dff7ee", self.theme["success"]),
-            "error": ("#3a1919" if self._dark else "#fde7e7", self.theme["error"]),
+            "queued": (self.theme["surface2"], self.theme["accent2"]),
+            "converting": ("#332600" if self._dark else "#fff8c5", self.theme["warning"]),
+            "done": ("#0f2a1a" if self._dark else "#dff7ee", self.theme["success"]),
+            "error": ("#3d1717" if self._dark else "#fde7e7", self.theme["error"]),
         }
         background, color = color_map.get(status, (self.theme["accent_soft"], self.theme["accent"]))
         label.setText(text)
